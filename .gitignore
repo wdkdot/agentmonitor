@@ -1,0 +1,24 @@
+# Local agent instructions and editor state
+/AGENTS.md
+/.vscode/
+/.idea/
+
+# Local SDK and large reference implementations
+/tools/
+/esp32-s3-1-64-amoled-x20/
+
+# ESP-IDF generated files
+/firmware/build*/
+/firmware/managed_components/
+/firmware/sdkconfig
+/firmware/ui-preview-*.bmp
+
+# Rust/Tauri generated files
+/ai-usage-display-host/target/
+/ai-usage-display-host/gen/
+
+# Logs and operating-system files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

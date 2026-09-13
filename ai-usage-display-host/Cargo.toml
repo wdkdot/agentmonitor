@@ -1,0 +1,37 @@
+[package]
+name = "ai-usage-display-host"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Host bridge for a USB AI usage display (Codex + Claude Code)"
+default-run = "ai-usage-display-host"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+dirs = "6"
+hidapi = "2.6"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+ureq = { version = "2.12", default-features = false, features = ["json", "tls", "native-certs", "proxy-from-env"] }
+
+[[bin]]
+name = "ai-usage-display-host"
+path = "src/main.rs"
+
+[[bin]]
+name = "ai-usage-display-cli"
+path = "src/bin/ai-usage-display-cli.rs"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"

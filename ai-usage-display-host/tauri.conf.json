@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AI Usage Display",
+  "version": "0.1.0",
+  "identifier": "com.aiusagedisplay.host",
+  "build": {
+    "frontendDist": "assets"
+  },
+  "app": {
+    "windows": []
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png", "icons/icon.ico"],
+    "shortDescription": "Codex and Claude usage display host",
+    "longDescription": "Sends Codex and Claude usage information to the AI Usage Display over USB.",
+    "category": "Utility",
+    "copyright": "Copyright 2026 AI Usage Display",
+    "windows": {
+      "nsis": {
+        "installerHooks": "windows/hooks.nsh",
+        "installMode": "currentUser"
+      }
+    }
+  }
+}
